@@ -11,15 +11,15 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
-    <script src="./scripts.js"></script>
+    <script src="../js/scripts.js"></script>
 </head>
 
 
 <body>
     <div class="navbar bg-dark mx-auto p-2 flex-column align-items-center">
         <div class="container-fluid d-flex justify-content-center" style="width: 200px;">
-            <a class="navbar-brand text-light" href="#">
-                <img src="./bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <a class="navbar-brand text-light" href="../index.html">
+                <img src="../bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
                 Consumindo
                 <strong>API</strong>
             </a>
@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-light" aria-current="page" href="../index.html">Home</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link text-light" href="#">Latitude/Longitude</a>
@@ -46,7 +46,7 @@
                                 CLima
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
-                                <li><a class="dropdown-item" href="./pages/coordenadas.html">Latitude/Longitude</a></li>
+                                <li><a class="dropdown-item" href="#">Latitude/Longitude</a></li>
                                 <li><a class="dropdown-item" href="#">Clima</a></li>
                                 <li><a class="dropdown-item" href="#">Sobre</a></li>
                             </ul>
@@ -70,7 +70,33 @@
             </div>
         </nav>
     </div>
-   
+    <div class="container mt-5">
+        <p>
+        <h1 class="text-center">Projeto</h1>
+        <h2 class="text-center">API OpenWeatherMap</h2>
+        </p>
+        <p class="text-center">Preencha os campos abaixo para obter a localização desejada.</p>
+        <form action="" method="post" class="d-flex flex-column align-items-center">
+            <input type="text" id="city" placeholder="Cidade" class="form-control mb-2">
+            <input type="text" id="state" placeholder="Estado" class="form-control mb-2">
+            <input type="text" id="country" placeholder="País" class="form-control mb-2">
+
+            <div>
+
+                <button type="button" class="btn btn-primary" onclick="getWeatherData()">Enviar</button>
+                <button type="reset" class="btn btn-secondary">Limpar</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Resultado</h2>
+        <div id="result" class="text-center">
+            <span id="latitude"></span><br>
+            <span id="longitude"></span>
+        </div>
+        <div id="map" class="text-center"></div>
+    </div>
 </body>
 
 
