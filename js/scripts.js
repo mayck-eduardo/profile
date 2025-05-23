@@ -6,7 +6,7 @@
         let limit = 1
         let apiKey = 'c1546a14357ae0b10c01b1d480a16012';
         // Define the API URL
-        const apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=${limit}&appid=${apiKey}`;
+        const apiUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city},${state},${country}&limit=${limit}&appid=${apiKey}`;
 
         // Make a GET request
         fetch(apiUrl)
