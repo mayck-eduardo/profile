@@ -1,3 +1,4 @@
+
 function getClima(latitude, longitude, apiKey) {
     // Define the API URL for weather data
     const climaUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&lang=pt_br&units=metric`;
