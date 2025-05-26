@@ -1,9 +1,41 @@
 * {
     margin: 0px;
     padding: 0px;
+    color: white;
 }
 
 body {
     text-align: center;
+    /* background-color: #ffffff; */
+    /* background-image: url('https://apod.nasa.gov/apod/image/2505/NGC2256_Webb_1280.jpg'); */
+    
 
+}
+
+.cor-nav{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+}
+
+.cor-subnav{
+    color: rgb(255, 255, 255);
+    width: 50%;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-bottom: -25px;
+}
+
+
+#footer {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer a {
+    color: rgb(98, 255, 0);
+    text-decoration: none;
 }

@@ -1,6 +1,21 @@
+<style>
+    #bg-blur {
+        position: fixed;
+        top: -15px;
+        left: -15px;
+        width: 105vw;
+        height: 100vh;
+        z-index: -1;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(10px) brightness(0.7);
+        transition: background-image 0.5s;
+    }
+</style>
 <div id="header">
 
-    <div class="navbar bg-dark mx-auto p-2 flex-column align-items-center">
+    <div class="navbar mx-auto p-2 flex-column align-items-center">
         <div class="container-fluid d-flex justify-content-center" style="width: 200px;">
             <a class="navbar-brand text-light" href="../pages/index.html">
                 <img src="../bootstrap-logo.svg" alt="Logo" width="30" height="24"
@@ -9,7 +24,7 @@
                 <strong>API</strong>
             </a>
         </div>
-        <nav class="navbar navbar-expand-lg bg-dark w-100 p-0 mt-2 navbar-dark">
+        <nav class="navbar navbar-expand-lg w-100 p-0 mt-2 navbar-dark">
             <div class="container-fluid d-flex flex-column align-items-center">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -19,7 +34,8 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active text-light" aria-current="page" href="../pages/index.html">Home</a>
+                            <a class="nav-link active text-light" aria-current="page"
+                                href="../pages/index.html">Home</a>
                         </li>
                         <!-- <li class="nav-item">
                             <a class="nav-link text-light" href="#">Latitude/Longitude</a>
@@ -56,3 +72,56 @@
         </nav>
     </div>
 </div>
+
+<!-- redirect to home.html -->
+
+<script>
+    $(function () {
+        $("#body").load("./pages/home.html");
+        getImageNasa();
+    });
+
+
+    function getImageNasa() {
+
+
+        let apiKey = 'LIITuAbE6ybfS5YThUqZxaoE5RnY8GqyjcnilAaa';
+        const date = new Date();
+        const formattedDate = date.toISOString().split('T')[0]; // Format date as YYYY-MM-DD
+        // Define the API URL
+        const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${formattedDate}&concept_tags=True`;
+        console.log(apiUrl);
+
+        // Make a GET request
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // console.log(data);
+                let link = data.hdurl || data.url;
+                // console.log(link + ' - ' + data.media_type);
+                // Add blurred background using a dedicated div
+                let bgDiv = document.getElementById('bg-blur');
+                if (!bgDiv) {
+                    bgDiv = document.createElement('div');
+                    bgDiv.id = 'bg-blur';
+                    document.body.prepend(bgDiv);
+                }
+                bgDiv.style.backgroundImage = `url(${link})`;
+                // Remove any background image from body to avoid stacking
+                document.getElementsByTagName('body')[0].style.backgroundImage = '';
+                document.getElementsByTagName('body')[0].style.backgroundSize = '';
+                // Nenhuma ação adicional necessária aqui para o efeito blur.
+                // document.getElementById('longitude').innerText = `Longitude: ${data[0].lon}`;
+            })
+            .catch(error => {
+                // console.error('Error:', error);
+            });
+
+    }
+    
+</script>
