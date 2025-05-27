@@ -1,6 +1,6 @@
 function buscaCEP() {
     document.getElementById('titulo').innerText = 'Buscando CEP...';
-    setTimeout(buscaCEP02, 2000); // 2 segundos (ajuste o tempo se quiser)
+    setTimeout(buscaCEP02, 1000); // 2 segundos (ajuste o tempo se quiser)
 }
 
 function buscaCEP02() {
