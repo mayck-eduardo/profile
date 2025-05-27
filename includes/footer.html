@@ -1,12 +1,41 @@
 <!-- rodapé -->
-<footer class="footer"></footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <br>
-                <p>&copy;2025 - Todos os direitos reservados.</p>
-                <p>Desenvolvido por <a href="" target="_blank" rel="noopener noreferrer">Mayck Eduardo</a></p>
-            </div>
+<footer style="width: 100%;" class=" text-light text-center p-3 w-100">
+    <br>
+    <p>&copy;2025 - Todos os direitos reservados.</p>
+    <p>Desenvolvido por <a href="" target="_blank" rel="noopener noreferrer">Mayck Eduardo</a></p>
+</footer>
+
+
+<!-- <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button> -->
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3" data-bs-theme="dark">
+    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <img src="..." class="rounded me-2" alt="...">
+            <strong class="me-auto">Mayck</strong>
+            <small>Agora</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+            Veja mais projetos no meu <a href="https://github.com/Mayck-Edu" target="_blank"
+                rel="noopener noreferrer">GitHub</a> ou <a href="" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>.
+            <br>
         </div>
     </div>
-</footer>
+</div>
+
+<script>
+    const toastLiveExample = document.getElementById('liveToast');
+    if (toastLiveExample) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastBootstrap.show();
+    }
+    const toastTrigger = document.getElementById('liveToastBtn');
+    if (toastTrigger && toastLiveExample) {
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
+        toastTrigger.addEventListener('click', () => {
+            toastBootstrap.show();
+        });
+    }
+</script>
