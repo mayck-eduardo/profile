@@ -37,3 +37,14 @@ body {
 .link{
     color: #62ff00;
 }
+
+#result{
+    border: #62ff00 solid 1px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 60%;
+    border-radius: 10px;
+    background-color: #00000089;
+    box-shadow: 0 0 10px rgba(98, 255, 0, 0.5);
+    
+}

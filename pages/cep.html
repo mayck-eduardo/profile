@@ -15,12 +15,29 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
         </script>
- <script>
+    <script>
         $(function () {
             $("#header").load("../includes/header.html");
             $("#footer").load("../includes/footer.html");
             // $("#footer").load("footer.html");
         });
+
+        window.onload = function () {
+
+            document.getElementById('cep').value = localStorage.cep; //
+            dados = JSON.parse(localStorage.dados); // Retrieve data from localStorage
+            if (dados) {
+                document.getElementById('cep').innerText = `CEP: ${dados.cep}`;
+                document.getElementById('cidade').innerText = `Cidade: ${dados.city} - ${dados.state}`;
+                document.getElementById('bairro').innerText = `Bairro: ${dados.neighborhood}`;
+                document.getElementById('rua').innerText = `Rua: ${dados.street}`;
+                document.getElementById('titulo').innerText = 'Resultado anterior';
+                document.getElementById('data').innerText = localStorage.getItem('data');
+            }
+
+            document.getElementById('erro').innerText = localStorage.erro || '';
+            
+        };
     </script>
 </head>
 
@@ -30,7 +47,7 @@
 
     <div class="container mt-5">
         <p>
-        <h1 class="text-center">Correios</h1>
+        <h1 class="text-center">CEP</h1>
         <h2 class="text-center">API busca CEP</h2>
         </p>
         <p class="text-center">Preencha o campo abaixo para obter os dadis da localização desejada.</p>
@@ -46,18 +63,19 @@
     </div>
 
     <div class="container mt-5">
-        <h2 class="text-center">Resultado</h2>
+        <h2 class="text-center" id="titulo">Resultado</h2>
+        <span id="data"></span>
         <div id="result" class="text-center">
-            <span id="erro"></span><br>
-            <span id="cep"></span><br>
             <span id="rua"></span><br>
             <span id="bairro"></span><br>
             <span id="cidade"></span><br>
+            <span id="erro"></span>
+            <span id="cep"></span>
         </div>
- 
+
     </div>
 
-      <div id="footer"></div>
+    <div id="footer"></div>
 </body>
 
 
