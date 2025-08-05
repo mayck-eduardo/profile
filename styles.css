@@ -109,7 +109,7 @@ span {
     letter-spacing: .15em;
     /* Espaçamento entre letras */
     animation:
-        typing 1.5s steps(30, end),
+        typing 3s steps(30, end) infinite alternate,
         blink-caret .75s step-end infinite;
 }
 
@@ -127,6 +127,38 @@ span {
         width: 100%;
     }
 }
+
+.typewriter2 {
+    overflow: hidden;
+    /* Oculta o texto */
+    /* border-right: .15em solid orange; */
+    /* Cursor */
+    white-space: nowrap;
+    /* Impede quebra de linha */
+    margin: 0 auto;
+    /* Centraliza */
+    letter-spacing: .15em;
+    /* Espaçamento entre letras */
+    animation:
+        typing2 5s steps(30, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* primeiro container */
+
+
+
+/* Animação de escrita */
+@keyframes typing2 {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
 
 /* Animação do cursor (piscando) */
 @keyframes blink-caret {
