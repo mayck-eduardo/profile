@@ -109,7 +109,7 @@ span {
     letter-spacing: .15em;
     /* Espaçamento entre letras */
     animation:
-        typing 3s steps(30, end) infinite alternate,
+        typing 3s steps(30, end) ,
         blink-caret .75s step-end infinite;
 }
 
@@ -327,4 +327,11 @@ span {
     font-weight: 300;
 
     font-family: 'Current', sans-serif;
+}
+
+.img-direita{
+    width: 60%;
+    margin-left: 0;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+   
 }
