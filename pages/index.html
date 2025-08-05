@@ -15,6 +15,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
         </script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+
+    <script>
+        const { animate } = anime;
+    </script>
     <script>
         $(function () {
             $("#header").load("../includes/header.html");
@@ -22,90 +27,54 @@
             // $("#footer").load("footer.html");
         });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <script>
+        import { animate, stagger, text } from 'animejs';
+
+        const { chars } = text.split('h2', { words: false, chars: true });
+
+        animate(chars, {
+            // Property keyframes
+            y: [
+                { to: '-2.75rem', ease: 'outExpo', duration: 600 },
+                { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
+            ],
+            // Property specific parameters
+            rotate: {
+                from: '-1turn',
+                delay: 0
+            },
+            delay: stagger(50),
+            ease: 'inOutCirc',
+            loopDelay: 1000,
+            loop: true
+        });
+    </script>
 </head>
 
 
 <body>
     <div id="header"></div>
-    <div class="container-md mt-5">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="card" aria-hidden="true">
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                <span class="col-6 fw-bolder">COORDENADAS</span>
-                            </h3>
-                            <p class="card-text placeholder-glow">
-                                <span class="col-7">Obtenha as cordenadas com base na localização</span>
-                                <!--<span class="placeholder col-4"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-6"></span>
-                                <span class="placeholder col-8"></span> -->
-                            </p>
-                            <a class="btn btn-success col-6" aria-disabled="true"
-                                href="./coordenadas.html"><b>Ir</b></a>
-                        </div>
-                    </div>
-                </div>
 
-
-                <div class="carousel-item">
-                    <div class="card" aria-hidden="true">
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                            <h5 class="card-title placeholder-glow">
-                                <!-- <span class="placeholder col-6"></span> -->
-                            </h5>
-                            <p class="card-text placeholder-glow">
-                                <span class="placeholder col-7"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-6"></span>
-                                <span class="placeholder col-8"></span>
-                            </p>
-                            <a class="btn btn-success disabled placeholder col-6" aria-disabled="true"></a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="carousel-item">
-                    <div class="card" aria-hidden="true">
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                            <h5 class="card-title placeholder-glow">
-                                <span class="placeholder col-6"></span>
-                            </h5>
-                            <p class="card-text placeholder-glow">
-                                <span class="placeholder col-7"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-4"></span>
-                                <span class="placeholder col-6"></span>
-                                <span class="placeholder col-8"></span>
-                            </p>
-                            <a class="btn btn-success disabled placeholder col-6" aria-disabled="true"></a>
-                        </div>
-                    </div>
-                </div>
-
+    <section>
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="large grid centered square-grid">
+                <h1 class="text-white text-center typewriter">Bem-vindo ao nosso projeto</h1><br>
+                <p class="fading">Este é um projeto de exemplo para demonstrar a integração de várias tecnologias web.
+                </p>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
+    </section>
+
+    <section>
 
 
-    <div class="container-md mt-5">
 
-        <!-- <div class=" mb-sm-0">
+        <div class="container-md mt-5">
+
+            <!-- <div class=" mb-sm-0">
             <div class="card" aria-hidden="true">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -125,44 +94,46 @@
 
 
         </div> -->
-        <div class="row">
-            <div class="col-sm-3 mb-3 mb-sm-0">
-                <div class="card" style="width: auto;">
-                    <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h3><b>COORDENADAS</b></h3>
-                        <p class="card-text">Obtenha as cordenadas com base na localização</p>
-                        <a href="./nasa.html" class="btn btn-success">Ir</a>
+            <div class="row">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card" style="width: auto;">
+                        <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h3><b>COORDENADAS</b></h3>
+                            <p class="card-text">Obtenha as cordenadas com base na localização</p>
+                            <a href="./nasa.html" class="btn btn-success">Ir</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-3 mb-sm-0">
-                <div class="card" style="width: auto;">
-                    <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
-                    <div class="card-body">
-                        <h3><b>API NASA</b></h3>
-                        <p class="card-text">Obtenha uma imagem diária do espaço.</p>
-                        <a href="./nasa.html" class="btn btn-success">Ir</a>
+                <div class="col-sm-3 mb-sm-0">
+                    <div class="card" style="width: auto;">
+                        <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                            <h3><b>API NASA</b></h3>
+                            <p class="card-text">Obtenha uma imagem diária do espaço.</p>
+                            <a href="./nasa.html" class="btn btn-success">Ir</a>
+                        </div>
                     </div>
+
+
+
                 </div>
 
 
-
             </div>
-
-
+            <div class="mt-5 container">
+                <h4>nada por aqui...</h4>
+                <br>
+                <h4>Explore as outras páginas</h4>
+                <br>
+                <a href="./clima.html" class="link">
+                    <h5>começe por aqui</h5>
+                </a>
+            </div>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
         </div>
-        <div class="mt-5 container">
-            <h4>nada por aqui...</h4>
-            <br>
-            <h4>Explore as outras páginas</h4>
-            <br>
-            <a href="./clima.html" class="link">
-                <h5>começe por aqui</h5>
-            </a>
-        </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div>
+    </section>
+
     <div id="footer"></div>
 </body>
 
