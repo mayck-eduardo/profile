@@ -15,11 +15,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
         </script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
-
-    <script>
-        const { animate } = anime;
-    </script>
+        
     <script>
         $(function () {
             $("#header").load("../includes/header.html");
@@ -27,113 +23,43 @@
             // $("#footer").load("footer.html");
         });
     </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
-    <script>
-        import { animate, stagger, text } from 'animejs';
-
-        const { chars } = text.split('h2', { words: false, chars: true });
-
-        animate(chars, {
-            // Property keyframes
-            y: [
-                { to: '-2.75rem', ease: 'outExpo', duration: 600 },
-                { to: 0, ease: 'outBounce', duration: 800, delay: 100 }
-            ],
-            // Property specific parameters
-            rotate: {
-                from: '-1turn',
-                delay: 0
-            },
-            delay: stagger(50),
-            ease: 'inOutCirc',
-            loopDelay: 1000,
-            loop: true
-        });
-    </script>
 </head>
 
 
 <body>
-    <div id="header"></div>
-
-    <section>
-        <div class="d-flex justify-content-center align-items-center vh-100">
-            <div class="large grid centered square-grid">
-                <h1 class="text-white text-center typewriter">Bem-vindo ao nosso projeto</h1><br>
-                <p class="fading">Este é um projeto de exemplo para demonstrar a integração de várias tecnologias web.
-                </p>
+    <video autoplay muted loop class="background-video">
+        <source src="../assets/01.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <div class="overlay"></div>
+    <div id="header" class="main-menu"></div>
+    
+    <section class="section-bg">
+        <div class="center-title">
+           <div class="large grid centered square-grid">
+                <h1 class="text-white text-center typewriter">Mayck_Eduardo</h1><br>
+                <!-- <p class="fading"></p> -->
 
             </div>
         </div>
-    </section>
-
-    <section>
-
-
-
-        <div class="container-md mt-5">
-
-            <!-- <div class=" mb-sm-0">
-            <div class="card" aria-hidden="true">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title placeholder-glow">
-                        <span class="placeholder col-6"></span>
-                    </h5>
-                    <p class="card-text placeholder-glow">
-                        <span class="placeholder col-7"></span>
-                        <span class="placeholder col-4"></span>
-                        <span class="placeholder col-4"></span>
-                        <span class="placeholder col-6"></span>
-                        <span class="placeholder col-8"></span>
-                    </p>
-                    <a class="btn btn-success disabled placeholder col-6" aria-disabled="true"></a>
-                </div>
-            </div>
-
-
+        <div class="corner-info top-left">
+            <div><a href="https://www.linkedin.com/in/mayck-eduardo/">Linkedin</a></div>
+            <div>SINCE<br>1976-07-28</div>
+        </div>
+        <!-- 
+        <div class="corner-info top-right">
+            <div>WEIGHT (MAX)<br>78018.0 KG (172000.0 LB)</div>
+            <div>LENGTH<br>32.7 M (107' 5")</div>
+        </div>
+        <div class="corner-info bottom-left">
+            <div>WINGSPAN<br>16.9 M (55' 7")</div>
+            <div>HEIGHT<br>5.6 M (18' 6")</div>
+        </div>
+        <div class="corner-info bottom-right">
+            <div>ALT<br>26000.0 M (85301 FT)</div>
+            <div>COST (FLIGHT HR)<br>195030.0 EUR ($216.5K)</div>
         </div> -->
-            <div class="row">
-                <div class="col-sm-3 mb-3 mb-sm-0">
-                    <div class="card" style="width: auto;">
-                        <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                            <h3><b>COORDENADAS</b></h3>
-                            <p class="card-text">Obtenha as cordenadas com base na localização</p>
-                            <a href="./nasa.html" class="btn btn-success">Ir</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3 mb-sm-0">
-                    <div class="card" style="width: auto;">
-                        <!-- <img src="https://api.nasa.gov/assets/img/hero.png" class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                            <h3><b>API NASA</b></h3>
-                            <p class="card-text">Obtenha uma imagem diária do espaço.</p>
-                            <a href="./nasa.html" class="btn btn-success">Ir</a>
-                        </div>
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
-            <div class="mt-5 container">
-                <h4>nada por aqui...</h4>
-                <br>
-                <h4>Explore as outras páginas</h4>
-                <br>
-                <a href="./clima.html" class="link">
-                    <h5>começe por aqui</h5>
-                </a>
-            </div>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </div>
     </section>
-
     <div id="footer"></div>
 </body>
 

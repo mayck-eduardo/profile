@@ -11,6 +11,7 @@ body {
     text-align: center;
     background-color: #000000;
     /* margin-top: 8rem; */
+    cursor: url('./assets/cursor.png'), auto;
 }
 
 .card p,
@@ -94,9 +95,13 @@ p, span{
   margin: 0 auto; /* Centraliza */
   letter-spacing: .15em; /* Espaçamento entre letras */
   animation:
-    typing 3.5s steps(30, end),
+    typing 1.5s steps(30, end),
     blink-caret .75s step-end infinite;
 }
+
+/* primeiro container */
+
+
 
 /* Animação de escrita */
 @keyframes typing {
@@ -138,4 +143,102 @@ p, span{
     100% {
         opacity: 0;
     }
+}
+
+/* #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+} */
+.section-bg {
+    position: relative;
+    overflow: hidden;
+    padding-top: 70px; /* ajuste conforme a altura do header */
+    min-height: 100vh;
+}
+
+.background-video {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    pointer-events: none;
+}
+.section-bg {
+    position: relative;
+    min-height: 100vh;
+    z-index: 2;
+}
+.center-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+}
+.center-title h1 {
+    font-size: 4vw;         /* menor */
+    font-weight: 300;       /* mais fino */
+    color: #eae6da;
+    font-family: 'Current', sans-serif;
+    letter-spacing: 0.05em;
+}
+.corner-info {
+    position: absolute;
+    color: #eae6da;
+    font-size: 0.9vw;       /* menor */
+    font-weight: 300;       /* mais fino */
+    font-family: 'Current', sans-serif;
+    z-index: 3;
+    text-align: left;
+    line-height: 1.5;
+}
+.top-left { top: 2vw; left: 2vw; }
+.top-right { top: 2vw; right: 2vw; text-align: right; }
+.bottom-left { bottom: 2vw; left: 2vw; }
+.bottom-right { bottom: 2vw; right: 2vw; text-align: right; }
+.main-menu {
+    position: fixed;
+    top: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    display: flex;
+    gap: 2vw;
+}
+.main-menu a {
+    color: #eae6da;
+    text-decoration: none;
+    font-family: 'Current', sans-serif;
+    font-size: 1vw;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.main-menu a:hover {
+    color: #ff3c00;
+}
+
+.corner-info a {
+    color: #eae6da;
+    font-size: 0.95vw;
+    font-weight: 300;
+    text-decoration: underline;
+    font-family: 'Current', sans-serif;
 }
