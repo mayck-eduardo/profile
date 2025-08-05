@@ -1,10 +1,13 @@
 @import url('https://fonts.cdnfonts.com/css/current');
 
+@import url('https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     color: white;
-    
+
 }
 
 body {
@@ -76,12 +79,18 @@ body {
     object-fit: cover;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: bolder;
     font-family: 'Current', sans-serif;
 }
 
-p, span{
+p,
+span {
     color: #d2d2d2;
     font-variant: small-caps
 }
@@ -89,14 +98,19 @@ p, span{
 
 /* animações!! */
 .typewriter {
-  overflow: hidden; /* Oculta o texto */
-  border-right: .15em solid orange; /* Cursor */
-  white-space: nowrap; /* Impede quebra de linha */
-  margin: 0 auto; /* Centraliza */
-  letter-spacing: .15em; /* Espaçamento entre letras */
-  animation:
-    typing 1.5s steps(30, end),
-    blink-caret .75s step-end infinite;
+    overflow: hidden;
+    /* Oculta o texto */
+    border-right: .15em solid orange;
+    /* Cursor */
+    white-space: nowrap;
+    /* Impede quebra de linha */
+    margin: 0 auto;
+    /* Centraliza */
+    letter-spacing: .15em;
+    /* Espaçamento entre letras */
+    animation:
+        typing 1.5s steps(30, end),
+        blink-caret .75s step-end infinite;
 }
 
 /* primeiro container */
@@ -105,22 +119,26 @@ p, span{
 
 /* Animação de escrita */
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
 
 /* Animação do cursor (piscando) */
 @keyframes blink-caret {
-  from, to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: orange;
-  }
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
 }
 
 .fading {
@@ -134,12 +152,15 @@ p, span{
     0% {
         opacity: 0;
     }
+
     15% {
         opacity: 1;
     }
+
     85% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -155,7 +176,8 @@ p, span{
 .section-bg {
     position: relative;
     overflow: hidden;
-    padding-top: 70px; /* ajuste conforme a altura do header */
+    padding-top: 70px;
+    /* ajuste conforme a altura do header */
     min-height: 100vh;
 }
 
@@ -169,21 +191,24 @@ p, span{
     z-index: 0;
     pointer-events: none;
 }
+
 .overlay {
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1;
     pointer-events: none;
 }
+
 .section-bg {
     position: relative;
     min-height: 100vh;
     z-index: 2;
 }
+
 .center-title {
     position: absolute;
     top: 50%;
@@ -192,27 +217,54 @@ p, span{
     z-index: 3;
     text-align: center;
 }
+
 .center-title h1 {
-    font-size: 4vw;         /* menor */
-    font-weight: 300;       /* mais fino */
+    font-size: 4vw;
+    /* menor */
+    font-weight: 300;
+    /* mais fino */
     color: #eae6da;
     font-family: 'Current', sans-serif;
     letter-spacing: 0.05em;
 }
+
 .corner-info {
     position: absolute;
     color: #eae6da;
-    font-size: 0.9vw;       /* menor */
-    font-weight: 300;       /* mais fino */
-    font-family: 'Current', sans-serif;
+    font-size: 0.9vw;
+    /* menor */
+    font-weight: 500;
+    text-transform: uppercase;
+    /* mais fino */
+    font-family: "Nata Sans", sans-serif;
     z-index: 3;
     text-align: left;
     line-height: 1.5;
+    letter-spacing: 0.05em;
 }
-.top-left { top: 2vw; left: 2vw; }
-.top-right { top: 2vw; right: 2vw; text-align: right; }
-.bottom-left { bottom: 2vw; left: 2vw; }
-.bottom-right { bottom: 2vw; right: 2vw; text-align: right; }
+
+.top-left {
+    top: 2vw;
+    left: 2vw;
+}
+
+.top-right {
+    top: 2vw;
+    right: 2vw;
+    text-align: right;
+}
+
+.bottom-left {
+    bottom: 2vw;
+    left: 2vw;
+}
+
+.bottom-right {
+    bottom: 2vw;
+    right: 2vw;
+    text-align: right;
+}
+
 .main-menu {
     position: fixed;
     top: 2vw;
@@ -222,6 +274,7 @@ p, span{
     display: flex;
     gap: 2vw;
 }
+
 .main-menu a {
     color: #eae6da;
     text-decoration: none;
@@ -231,14 +284,15 @@ p, span{
     font-weight: bold;
     transition: color 0.2s;
 }
+
 .main-menu a:hover {
     color: #ff3c00;
 }
 
-.corner-info a {
+.corner-info a, .corner-info .title {
     color: #eae6da;
     font-size: 0.95vw;
     font-weight: 300;
-    text-decoration: underline;
+
     font-family: 'Current', sans-serif;
 }
